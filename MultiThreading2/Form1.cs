@@ -23,7 +23,8 @@ namespace MultiThreading2
             //TimeConsumingJob.Enabled = false;
             //PrintNumbers.Enabled = false;
 
-            // This thread is a light weight which executes the time consuming task.
+            // This thread is a light weight which executes the time consuming task. The main thread is for the application
+            // this thread is for subtasks so that the main thread can keep running.
             Thread threadWork = new Thread(TimeConsumingTask);
             threadWork.Start();
           //  TimeConsumingTask();   // IF ONLY THIS AND NO THREAD . THE NUMBERS WILL NOT BE PRINTED UNTIL AFTER 8 SECS WHEN BTN CLICKED
